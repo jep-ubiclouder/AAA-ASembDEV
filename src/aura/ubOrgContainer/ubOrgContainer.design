@@ -1,0 +1,4 @@
+<design:component Label="Org Container">
+	 <design:attribute name="RT" label="Type" default="Master" datasource="apex://getOrgRT" description="Choose a Type" />
+	 <design:attribute name="FS" label="Fields Set" default="No FieldsSet Chosen" datasource="apex://getOrgFS" description="Choose Fields To Display" />
+</design:component>

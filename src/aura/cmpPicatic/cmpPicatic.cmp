@@ -1,0 +1,4 @@
+<aura:component access="global" controller="Picatic" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" >
+    <aura:text value="Working... Please wait" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+</aura:component>

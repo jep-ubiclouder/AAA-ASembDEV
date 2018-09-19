@@ -1,0 +1,50 @@
+<aura:component controller="ctrlImgFromS3" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasSObjectName" access="global">
+    <!--aura:handler name="init" value="{!this}" action="{!c.doInit}" /-->
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="mainRecordId" type="Id" access="global" />
+    <aura:attribute name="sObjectName" default="Organisation__c" type="String" access="global" />
+    <aura:attribute name="URL" type="string" default="None chosen!" access="global" />
+    <aura:attribute name="isOpen" type="boolean" default="false" access="global" />
+    <aura:attribute name="currentRec" type="Id" default="" access="global" />
+    <!--ltng:require styles="{!$Resource.Croppie/croppie.css}" / -->
+    <aura:attribute name="isVisible" type="boolean" default="false" />
+
+
+    <ltng:require scripts="{!$Resource.Croppie + '/croppie.js'}" styles="{!$Resource.Croppie + '/croppie.css'}" afterScriptsLoaded="{!c.doInit}" />
+    <!---->
+    <aura:attribute name="base64Buffer" access="global" type="String[]" default="" />
+    <aura:attribute name="croppieParameters" access="global" type="Object" default="" />
+    <aura:attribute name="ImageFieldName" access="global" type="String" default="Profile" />
+    <aura:attribute name="fieldMap" access="global" type="Object" />
+    <aura:attribute name="currentRecasJSON" type="String" default="" access="global" />
+    <!--
+    <div aura:id="mainContainer">
+    
+        <div aura:id="Result" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open toggle">
+            <div class="slds">
+            -->
+    <div class="slds-p-horizontal--small slds-size--1-of-2 slds-p-bottom--x-small " aura:id="modaldialog">
+        <div role="dialog" class="slds-modal slds-modal--prompt slds-fade-in-open slds-p-bottom--x-small" tabindex="-1">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header slds-theme--info">
+                    <div class="slds-modal__header">
+                        <h2 id="header43" class="slds-text-heading--medium"> Edit Cropping parameters below</h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div class='slds-box' aura:id="my-image"></div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <lightning:button variant="brand" onclick="{!c.saveCroppieParms}">Save One</lightning:button>
+                        <lightning:button variant="neutral" onclick="{!c.toggleModal}">Cancel</lightning:button>
+                        <lightning:fileUpload name="fileUploader" multiple="false" disabled="false" accept=".jpg, .png, .jpeg" recordId="{!v.currentRec}" onuploadfinished="{!c.handleUploadFinished}" />
+                        <!--div class="slds-col slds-p-around_small">
+                            <lightning:fileUpload name="fileUploader" multiple="false" accept=".jpg, .png, .jpeg" recordId="{!v.currentRec}" onuploadfinished="{!c.handleUploadFinished}" />
+                        </div-->
+                    </div>
+                    <div class="slds-backdrop " aura:id="Modalbackdrop"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</aura:component>

@@ -1,0 +1,24 @@
+<aura:component  implements="force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="RTName" type="String" access="global" />
+    <aura:attribute name="RTId" type="String" access="global" />
+    <aura:attribute name="sfId" type="String" access="global" />
+    <aura:attribute name="FSName" type="String" access="global" />
+    <aura:attribute name="Colonnes" type="Object[]" access="global" />
+    <aura:attribute name="sfObject" type="String" access="global" />
+    <aura:attribute name='dataRecord' type="Object" access="global" />
+    <aura:attribute name="disabled" type="Boolean" default="false" />
+    <aura:attribute name="saved" type="Boolean" default="true" />
+    <aura:attribute name="mode" type="String" default="view" />
+    <aura:attribute name="champs" type="String[]" default="[]" />
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />
+    <!--aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner />
+    </aura:if-->
+
+    <aura:attribute name="edit" type="Boolean" default="true" />
+    <div class='slds slds-p-horizontal_x-large'>
+        {!v.body}
+    </div>
+</aura:component>

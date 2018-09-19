@@ -1,0 +1,21 @@
+<aura:component controller="ctrlAura" 
+				implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" 
+				access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+	<aura:attribute name="sObjectName" type="String" access="global" />
+    <aura:attribute name='listLignes' type="Object[]" access="global" />
+    <aura:attribute name="myId" type="String" access="global" />
+    <aura:attribute name="Accid" type="String" access="global" />
+    
+    <tr>
+        <td>
+            <lightning:breadcrumbs  class=" slds-m-top_small slds-m-bottom_small">
+                {!v.body}
+            </lightning:breadcrumbs>
+        </td>
+        <td>
+        	<lightning:button label="Delete" onclick="{!c.handleClick}"  iconName="utility:delete" iconPosition="left" class="slds-button slds-button_destructive slds-m-top_small slds-m-bottom_small"/>
+        </td>
+    </tr>
+</aura:component>

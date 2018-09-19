@@ -1,0 +1,33 @@
+<aura:component controller="ctrlElemBio" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:attribute name="recordId" type="Id" access="global" />
+  <aura:attribute name="isVisible" type="boolean" default="false" />
+  <aura:attribute name="RecordTypeId" type="String" access="global" />
+  <aura:attribute name="Id" type="String" access="global" />
+  <aura:attribute name="RecordTypeName" type="String" access="global" />
+  <aura:attribute name="liste" type="Object[]" description="les records de biographie" default="[]" />
+  <div class="slds-box">
+    <div class="slds-float_right"><ui:button >Hello </ui:button>
+      <div>
+        <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal">
+          <thead>
+            <tr class="slds-text-title_caps">
+              <th class="slds-cell-shrink" scope="col">col 1</th>
+              <th scope="col">
+                <div class="slds-truncate" title="Close Date">Col 2
+                  <button class="slds-button slds-button_icon slds-button_icon" title="Sort"></button>
+              </div>
+              </th>
+            </tr>
+            </thead>
+            <aura:iteration items="{!v.liste}" var="rec">
+            <tr>
+              <td data-label="Account Name">Valeur 1</td>
+              <td data-label="Prospecting">Valeur 2</td>
+            </tr>
+            </aura:iteration>
+          
+        </table>
+    </div></div>
+  </div>
+</aura:component>

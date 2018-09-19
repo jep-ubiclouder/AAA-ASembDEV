@@ -1,0 +1,16 @@
+<apex:page standardController="Sales_Plan__c" extensions="CreateCampaignMembersFromChoices" action="{!updateIt}">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  
+    <apex:form >
+    <apex:pageBlock >
+    
+    <apex:selectList value="{!SelectedSa}" multiselect="false" size="1">
+    <apex:selectOptions value="{!SA}" ></apex:selectOptions>
+    </apex:selectList>
+  </apex:pageBlock>    
+    <span><apex:commandButton value="Sauver" action="{!MAJ}" /> <apex:commandButton value="Annuller" action="{!Abandon}" /></span>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

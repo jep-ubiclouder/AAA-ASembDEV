@@ -1,0 +1,5 @@
+<apex:page standardController="Campaign" extensions="Picatic" action="{!UpsertMember}">
+    <!-- Button for update campaign member from picatic (classic) -->
+    <apex:sectionHeader title="Get Member" />
+    <apex:pageMessages id="showmsg"></apex:pageMessages>
+</apex:page>

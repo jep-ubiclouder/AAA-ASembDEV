@@ -1,0 +1,3 @@
+<design:component label="Flex-o-Fields for Bio For Communities"> 
+		  <design:attribute name="FS" label="Choose a FS" datasource="apex://getBioMainFS" description="Choose Fields To Display" />
+</design:component>

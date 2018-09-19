@@ -1,0 +1,19 @@
+<aura:component controller="ctrlAura">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="sousarbre" type="Object" />
+    <aura:attribute name="arbre" type="Object" />
+    <aura:attribute name="listeGlobale" type="Object" />
+    <aura:attribute name="curPath" type="object" default='-----' />
+    <aura:attribute name="root" type="String" default="0" />
+    <aura:attribute name="listeActivites" type="Object[]" default="[]" />
+    <aura:attribute name="depth" type="Integer" />
+    <aura:registerEvent name="cmpDispatch" type="c:dispatchActivity" />
+
+    <div class="slds">
+            <ui:inputSelect aura:id="searchBox" change="{!c.chooseCat}" />
+    </div>
+    <div>
+        {!v.body}
+    </div>
+
+</aura:component>

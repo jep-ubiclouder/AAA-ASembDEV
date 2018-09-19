@@ -1,0 +1,20 @@
+<aura:component controller="CtrlBioOrg" 
+				implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,force:lightningQuickActionWithoutHeader" 
+							access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="arrRT" type="Object[]" access="global" />
+	<aura:attribute name="RT" type="String" access="global" />
+	<aura:attribute name="FS" type="String" access="global" />
+    <aura:attribute name="RTId" type="String" access="global" />
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}"/>
+    
+    <div id="sfdc_extrafield_container" class="sfdc slds-box">
+			{!v.RT}
+        {!v.body}
+    </div>
+ 
+
+
+</aura:component>

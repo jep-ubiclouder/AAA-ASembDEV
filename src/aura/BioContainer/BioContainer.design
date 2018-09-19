@@ -1,0 +1,4 @@
+<design:component label="Biography Container">
+	 <design:attribute name="RT" label="RecordType" default="Master" datasource="apex://getBioRT" description="Choose a Type" />
+	  <design:attribute name="FS" label="Fields Set" default="No FieldsSet Chosen" datasource="apex://getBioFS" description="Choose Fields To Display" />
+</design:component>

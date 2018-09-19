@@ -1,0 +1,35 @@
+<apex:page controller="Bouton_traitement_ligne" docType="html-5.0">
+
+
+    <apex:outputPanel >
+    <apex:pageMessages id="pageMessages"/>
+    </apex:outputPanel>
+              
+    <apex:form id="theform">
+        <apex:pageblock mode="maindetail" id="thePageBlock" >
+
+                <table width="50%">
+                    <tr>
+                        <td style="text-align: right; padding: 5px;"><apex:outputtext value="Voulez-vous importer les lignes de commandes ?" style="font-size:16pt;"/></td>
+                        <td style="text-align: left;"><apex:commandbutton style="font-size:16pt; width:200px;" action="{!ImportLigne}" value="   Import   "/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;"><apex:outputtext value="Voulez-vous mettre à jour les comptes ?" style="font-size:16pt; align:center;"/></td>
+                        <td style="text-align: left;"><apex:commandbutton style="font-size:16pt;  width:200px;" action="{!TraitementLigne}" value=" Mettre à jour "/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;"><apex:outputtext value="Voulez-vous mettre à jour les groupes ?" style="font-size:16pt; align:center;"/></td>
+                        <td style="text-align: left;"><apex:commandbutton style="font-size:16pt;  width:200px;" action="{!Traitementgroupe}" value=" Mettre à jour "/></td>
+                    </tr>
+                    
+                    
+                </table>
+
+
+        </apex:pageblock>
+        
+        
+    </apex:form>
+
+
+</apex:page>

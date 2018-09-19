@@ -1,0 +1,20 @@
+<apex:page standardController="SP_Choix_de_l_Activit__c" recordSetVar="SP_Choix_de_l_Activit__c" extensions="Ctrl_CSASP"  sidebar="false" applyBodyTag="true" docType="html-5.0" >
+<!-- Begin Default Content REMOVE THIS -->
+
+<apex:form >
+  Ces secteurs d'activités sont dejà selectionnés, vous ne pouvez plus les enlever
+    <apex:pageBlock >
+      <apex:repeat value="{!Secteurs}" var="string" id="theRepeat">
+       <apex:outputText value="{!string}" id="theValue"/><br/>
+      
+      </apex:repeat>
+     </apex:pageBlock>
+      <apex:pageBlock >
+          <apex:selectList value="{!SelectedSA}" multiselect="true" >
+            <apex:selectOptions value="{!items}"/>
+        </apex:selectList><p/>
+    
+    </apex:pageBlock>
+     <span><apex:commandButton value="Sauver" action="{!MAJ}" /> <apex:commandButton value="Annuler" action="{!Abandon}" /></span>
+    </apex:form>
+</apex:page>

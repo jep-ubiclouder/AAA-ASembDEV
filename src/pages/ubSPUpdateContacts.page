@@ -1,0 +1,25 @@
+<apex:page standardController="SP_Contact__c" recordSetVar="SP_Contact__c" extensions="Ctrl_ContactsSP"  sidebar="false" applyBodyTag="true" docType="html-5.0" >>
+  <apex:form >
+    <apex:sectionHeader title="Upload data from CSV file" />
+    <apex:pagemessages />
+    <apex:pageBlock >
+    
+      <center>
+        <apex:inputFile value="{!contentFile}" filename="{!nameFile}" />
+        <apex:commandButton action="{!ReadFile}" value="Upload File" id="theButton" style="width:70px;" />
+        <br /> <br />
+      <span><apex:commandButton value="Sauver" action="{!MAJ}" /> <apex:commandButton value="Annuler" action="{!Abandon}" /></span>
+      </center>
+    </apex:pageBlock>
+    <apex:pageBlock >
+    
+    <apex:pageBlockTable value="{!lstContacts}" var="u">
+    <apex:column headerValue="Nom" value="{!u.Nom}" />
+    <apex:column headerValue="Choisir"> 
+      <apex:inputcheckbox value="{!u.selected}"/>
+    </apex:column>
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+  </apex:form>
+</apex:page>

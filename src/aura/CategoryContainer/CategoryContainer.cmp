@@ -1,0 +1,22 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" controller="ctrlAura" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="arbre" type="Object" />
+    <aura:attribute name="items" type="Object" />
+    <aura:attribute name="root" type="String" default="0" />
+    <aura:attribute name="listeActivites" type="Object[]" default="[]" />
+	<aura:attribute name="sObjectName" type="String" access="global" />
+    <aura:handler name="cmpDispatch" event="c:dispatchActivity" action="{!c.handleEvent}" />
+    <article class="slds-card" >
+        <div class="slds-card__body slds-card__body_inner">
+        Choose a Category:
+            {!v.body}
+        </div>
+        <footer class="slds-card__footer">
+            <lightning:buttonGroup >
+                <lightning:button label="Cancel" onclick="{!c.handleClick}" />
+                <lightning:button label="Save" onclick="{!c.handleClick}" />
+            </lightning:buttonGroup>
+        </footer>
+    </article>
+</aura:component>

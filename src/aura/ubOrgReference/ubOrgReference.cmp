@@ -1,0 +1,34 @@
+<aura:component controller="CtrlBioOrg" implements="force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="mainRecordId" type="Id" access="global" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="RTName" type="String" access="global" />
+    <aura:attribute name="RTId" type="String" access="global" />
+    <aura:attribute name="ContactId" type="String" access="global" />
+    <aura:attribute name="curObj" type="String" access="global" />
+    <aura:attribute name="FieldSet" type="String" access="global" />
+    <aura:attribute name="dataTableColumns" type="Object[]" />
+    <aura:attribute name="mydata" type="Object[]" default='[]' />
+    <aura:attribute name="sortedBy" type="String" access="global" />
+    <aura:attribute name="sortedDirection" type="String" access="global" />
+    <!-- aura:handler name="render" value="{!this}" action="{!c.doInit}" /-->
+    <div class="slds ">
+        <div class="sfdc slds-p-top_small slds-text-heading_small">
+            <lightning:button variant="brand" aura:id="New" label="New" onclick="{! c.handleClick }" />
+            <lightning:button variant="brand" label="Refresh" aura:id="Refresh" onclick="{! c.handleClick }" />
+            
+        </div>
+        <div class="sfdc slds-p-top_small slds-text-heading_small ">
+            <lightning:datatable aura:id="ReferencesRecord"  
+            					data="{! v.mydata }" 
+            					columns="{! v.dataTableColumns }" 
+            					keyField="Id" 
+            					onrowaction="{! c.handleRowAction }" 
+            					onsave="{!c.handleSave}" 
+            					hideCheckboxColumn="true" /> 
+        </div>
+        {!v.body}
+
+    </div>
+
+</aura:component>

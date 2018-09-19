@@ -1,0 +1,20 @@
+<aura:component controller="ctrlImgFromS3" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="URL" type="string" default="None chosen!" access="global" />
+    <aura:attribute name="myRecordId" type="String" description="Record to which the files should be attached" />
+    <aura:attribute name="multiple" type="Boolean" default="false" />
+    <aura:attribute name="AttachedField" type="String"  default="Profile Image" access="global"/>
+    
+    <div class='slds-box'>
+
+        <lightning:fileUpload label="{!v.AttachedField}"
+        	multiple="{!v.multiple}" 
+        	accept=".pdf, .png" 
+        	recordId="{!v.recordId}"
+        	onuploadfinished="{!c.handleUploadFinished}" 
+        	aura:id="lightningfileUpload" />
+    </div>
+	
+</aura:component>

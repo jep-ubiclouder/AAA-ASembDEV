@@ -1,0 +1,20 @@
+<aura:component controller="ctrlImgFromS3" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="URL" type="string" default="None chosen!" access="global" />
+    <ltng:require styles="{!$Resource.Croppie/croppie.css}" />
+    <ltng:require scripts="{!$Resource.Croppie/croppie.js}" afterScriptsLoaded="{!c.Croppie}" />
+    <div class='slds-box'>
+        <img src='{!v.URL}' class="my-image" aura:id="my-image" />
+
+    </div>
+
+    <canvas aura:id="myCanvas" width="200" height="100" style="border:1px solid #000000;" />
+    <div class='slds-box'>
+
+        {!v.body}
+    </div>
+
+
+
+</aura:component>

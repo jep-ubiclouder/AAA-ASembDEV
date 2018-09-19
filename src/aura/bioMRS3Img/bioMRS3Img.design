@@ -1,0 +1,3 @@
+<design:component label="Biography Main record Image Editor">
+	<design:attribute name="ImageFieldName" label="Please Choose" description="Choose Image field to Attach" datasource="Profile,Event Speaker"/>
+</design:component>

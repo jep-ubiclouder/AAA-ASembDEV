@@ -1,0 +1,28 @@
+<aura:component controller="bioFOFCtrlAura" implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="sObjectName" default="Biography__c" type="String" access="global"/>
+    <aura:attribute name="arrRT" type="Object[]" access="global" />
+    <aura:attribute name="RT" type="String" access="global" />
+    <aura:attribute name="FS" type="String" default="NoFieldSetDefined" access="global" />
+    <aura:attribute name="fsLabel" type="String" default="NoFieldSetDefined" access="global" />
+    <aura:attribute name="RTId" type="String" access="global" />
+    <aura:attribute name="Fields" type="String[]" access="global" />
+    <aura:attribute name="Colonnes" type="Object[]" access="global" />
+    <div class='slds'>
+        <aura:if isTrue="{!v.FS == 'NoFieldSetDefined'}">
+            <div id="error">
+                <ui:outputRichText value="No FieldSet Chosen" />
+            </div>
+
+            <aura:set attribute="else">
+
+                <lightning:card iconName="standard:account" title="{!v.fsLabel}">
+                   
+                    {!v.body}
+                </lightning:card>
+            </aura:set>
+
+        </aura:if>
+    </div>
+</aura:component>

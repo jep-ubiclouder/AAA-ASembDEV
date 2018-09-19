@@ -1,0 +1,3 @@
+<design:component label="Flex-o-Fields for Org For Communities"> 
+		  <design:attribute name="FS" label="Choose a FS" datasource="apex://getOrgMainFS" description="Choose Fields To Display" />
+</design:component>
